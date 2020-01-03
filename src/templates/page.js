@@ -8,7 +8,7 @@ class Page extends Component {
     return (
       <>
         <h1>{StaticPage.title}</h1>
-        <div>{StaticPage.content}</div>
+        <div dangerouslySetInnerHTML={{ __html: StaticPage.content }}/>
       </>
     )
   }
@@ -26,7 +26,6 @@ export const pageQuery = graphql`
       id
       siteMetadata {
         title
-        subtitle
       }
     }
   }
